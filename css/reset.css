@@ -1,9 +1,99 @@
 @charset "UTF-8";
+:root {
+    /* colors */
+    --color-white: #fafafa;
+    --color-black: #111;
+    --color-blue-dark: #2464AF;
+    --color-blue-light: #558ED5;
+    --color-green: #03B403;
+    --color-red: #D82929;
+    --color-glass-border: rgba(255, 255, 255, 0.2);
+    --color-glass-bg: rgba(255, 255, 255, 0.05);
+    --color-glass-inset-top: rgba(255, 255, 255, 0.4);
+    --color-glass-inset-bottom: rgba(255, 255, 255, 0.08);
 
+    /* font-size */
+    --fs-xs: 0.7vw;
+    --fs-sm: 0.8vw;
+    --fs-md: 0.9vw;
+    --fs-base: 1.1vw;
+    --fs-lg: 1.3vw;
+    --fs-xl: 1.5vw;
+    --fs-2xl: 3.5vw;
+    --fs-header: 1.5vw;
+    --fs-icon: clamp(24px, 2.5vw, 40px);
+
+    /* spacing */
+    --gap-xs: 4px;
+    --gap-sm: 8px;
+    --gap-md: 12px;
+    --gap-lg: 16px;
+    --gap-xl: 20px;
+    --gap-2xl: 24px;
+    --gap-3xl: 40px;
+
+    /* border-radius */
+    --radius-sm: 4px;
+    --radius-md: 20px;
+    --radius-full: 999px;
+}
 
 /* ============================================================
    FONT
    ============================================================ */
+   @font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Thin.otf') format('opentype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Black.otf') format('opentype');
+    font-weight: 900;
+}
 
 
 /* ============================================================
@@ -14,6 +104,12 @@
 /* ============================================================
    RESET
    ============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html,
 body,
 div,
