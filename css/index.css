@@ -35,6 +35,10 @@
     --radius-sm: 4px;
     --radius-md: 20px;
     --radius-full: 999px;
+
+    /* 날씨상태 */
+    --weather-clear: linear-gradient(135deg, var(--color-blue-dark), var(--color-blue-light));
+    --bad-good : linear-gradient(90deg, #0D325D 0%, #173C67 40%, #2464AF 60%, #558ED5 100%)
 }
 
 /* ============================================================
@@ -44,7 +48,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, var(--color-blue-dark), var(--color-blue-light));
+    background: var(--bad-good);
     color: var(--color-white);
 }
 
@@ -73,7 +77,9 @@ body {
 .glass::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
 }
@@ -81,7 +87,8 @@ body {
 .glass::after {
     content: '';
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 1px;
     height: 100%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent, rgba(255, 255, 255, 0.15));
@@ -107,7 +114,7 @@ main {
     padding: 0 var(--gap-3xl) var(--gap-3xl);
 }
 
-main > div {
+main>div {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -136,7 +143,9 @@ main > div {
     color: var(--color-black);
 }
 
-.qr_wrap img { width: 50px; }
+.qr_wrap img {
+    width: 50px;
+}
 
 .search_wrap {
     height: fit-content;
@@ -182,7 +191,9 @@ main > div {
     justify-content: center;
 }
 
-.badge_wrap .material-symbols-outlined { font-size: var(--fs-2xl); }
+.badge_wrap .material-symbols-outlined {
+    font-size: var(--fs-2xl);
+}
 
 .badge_text {
     position: absolute;
@@ -194,11 +205,21 @@ main > div {
     white-space: nowrap;
 }
 
-.start .content_header .material-symbols-outlined { color: var(--color-red); }
-.start .badge_text { background-color: var(--color-red); }
+.start .content_header .material-symbols-outlined {
+    color: var(--color-red);
+}
 
-.arrive .content_header .material-symbols-outlined { color: var(--color-green); }
-.arrive .badge_text { background-color: var(--color-green); }
+.start .badge_text {
+    background-color: var(--color-red);
+}
+
+.arrive .content_header .material-symbols-outlined {
+    color: var(--color-green);
+}
+
+.arrive .badge_text {
+    background-color: var(--color-green);
+}
 
 .airport_info {
     display: flex;
@@ -206,16 +227,27 @@ main > div {
     gap: 2px;
 }
 
-.airport_info span { letter-spacing: 0.05em; }
+.airport_info span {
+    letter-spacing: 0.05em;
+}
 
-.airport_kr { font-size: var(--fs-base); font-weight: bold; }
-.airport_eng { font-size: var(--fs-sm); }
+.airport_kr {
+    font-size: var(--fs-base);
+    font-weight: bold;
+}
+
+.airport_eng {
+    font-size: var(--fs-sm);
+}
 
 
 /* ============================================================
    now_temp
    ============================================================ */
-.now_temp > h2 { font-size: var(--fs-lg); font-weight: bold; }
+.now_temp>h2 {
+    font-size: var(--fs-lg);
+    font-weight: bold;
+}
 
 .temp_wrap {
     display: flex;
@@ -224,19 +256,26 @@ main > div {
     justify-content: center;
 }
 
-.temp_img { width: 250px; }
+.temp_img {
+    width: 250px;
+}
 
-.temp_value h1 { font-size: var(--fs-2xl); font-weight: bold; }
+.temp_value h1 {
+    font-size: var(--fs-2xl);
+    font-weight: bold;
+}
 
-.temp_value > div {
+.temp_value>div {
     display: flex;
     align-items: center;
     gap: var(--gap-md);
 }
 
-.temp_value > div > span { font-size: var(--fs-md); }
+.temp_value>div>span {
+    font-size: var(--fs-md);
+}
 
-.temp_value > div > div {
+.temp_value>div>div {
     display: flex;
     gap: var(--gap-xs);
     align-items: center;
@@ -245,7 +284,9 @@ main > div {
     border-radius: var(--radius-full);
 }
 
-.temp_value > div > .glass { backdrop-filter: none; }
+.temp_value>div>.glass {
+    backdrop-filter: none;
+}
 
 
 /* ============================================================
@@ -259,13 +300,13 @@ main > div {
     gap: 10px;
 }
 
-.today_content > div {
+.today_content>div {
     display: flex;
     width: 100%;
     padding: var(--gap-lg) 0;
 }
 
-.today_content > div > div {
+.today_content>div>div {
     display: flex;
     flex: 1;
     height: 100%;
@@ -275,17 +316,33 @@ main > div {
     border-right: 1px solid var(--color-glass-border);
 }
 
-.today_content > div > div:last-child { border-right: none; }
+.today_content>div>div:last-child {
+    border-right: none;
+}
 
-.now_content > div { gap: var(--gap-2xl); }
+.now_content>div {
+    gap: var(--gap-2xl);
+}
 
-.now_content > div .material-symbols-outlined { font-size: var(--fs-icon); opacity: 0.8; }
+.now_content>div .material-symbols-outlined {
+    font-size: var(--fs-icon);
+    opacity: 0.8;
+}
 
-.now_content .icon { width: var(--fs-icon); height: var(--fs-icon); }
+.now_content .icon {
+    width: var(--fs-icon);
+    height: var(--fs-icon);
+}
 
-.today_info { display: flex; flex-direction: column; gap: var(--gap-xs); }
+.today_info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+}
 
-.today_label { font-size: var(--fs-xs); }
+.today_label {
+    font-size: var(--fs-xs);
+}
 
 .today_label span {
     padding: 2px 6px;
@@ -294,22 +351,42 @@ main > div {
     margin-left: 5px;
 }
 
-.today_value { font-size: var(--fs-xl); }
+.today_value {
+    font-size: var(--fs-xl);
+}
 
-.time_wrap > div { flex-direction: column; gap: var(--gap-lg); }
+.time_wrap>div {
+    flex-direction: column;
+    gap: var(--gap-lg);
+}
 
-.time_content img { width: 32px; }
+.time_content img {
+    width: 32px;
+}
 
-.time_label { font-weight: bold; }
+.time_label {
+    font-weight: bold;
+}
 
 .time_label,
 .temp_info span,
-.wind_info span { font-size: var(--fs-md); }
+.wind_info span {
+    font-size: var(--fs-md);
+}
 
 .temp_info,
-.wind_info { display: flex; gap: var(--gap-xs); align-items: center; }
+.wind_info {
+    display: flex;
+    gap: var(--gap-xs);
+    align-items: center;
+}
 
-.time_content { display: flex; gap: var(--gap-lg); justify-content: center; flex-direction: column; }
+.time_content {
+    display: flex;
+    gap: var(--gap-lg);
+    justify-content: center;
+    flex-direction: column;
+}
 
 
 /* ============================================================
@@ -323,7 +400,7 @@ main > div {
     overflow: hidden;
 }
 
-.notice_text > div {
+.notice_text>div {
     position: absolute;
     bottom: -25px;
     display: flex;
